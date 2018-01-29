@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.contenttypes import generic
+from django.contrib.contenttypes.fields import GenericForeignKey
 from django.utils.translation import ugettext_lazy as _
 from django.conf import settings
 from gateway import Gateway
@@ -84,7 +84,7 @@ class Message(models.Model):
 
     content_type = models.ForeignKey('contenttypes.ContentType')
     object_id = models.PositiveIntegerField()
-    billee = generic.GenericForeignKey()
+    billee = GenericForeignKey()
 
     gateway = models.ForeignKey('sms.Gateway', null=True, blank=True)
     gateway_message_id = models.CharField(max_length=128, blank=True,
