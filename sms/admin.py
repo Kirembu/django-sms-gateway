@@ -11,11 +11,11 @@ class GatewayAdmin(admin.ModelAdmin):
 
     def get_urls(self):
         urls = super(GatewayAdmin, self).get_urls()
-        my_urls = patterns('',
-            (r'^$', self.admin_site.admin_view(self.changelist_view)),
-            (r'^add/$', self.admin_site.admin_view(self.add_view)),
-            (r'^/(.+)/$', self.admin_site.admin_view(self.change_view)),
-        )
+        my_urls = [
+            url(r'^$', self.admin_site.admin_view(self.changelist_view)),
+            url(r'^add/$', self.admin_site.admin_view(self.add_view)),
+            url(r'^/(.+)/$', self.admin_site.admin_view(self.change_view)),
+        ]
         return my_urls + urls
 
     def changelist_view(self, request, extra_context=None):
@@ -61,11 +61,11 @@ class MessageAdmin(admin.ModelAdmin):
 
     def get_urls(self):
         urls = super(MessageAdmin, self).get_urls()
-        my_urls = patterns('',
-            (r'^$', self.admin_site.admin_view(self.changelist_view)),
-            (r'^add/$', self.admin_site.admin_view(self.add_view)),
-            (r'^/(.+)/$', self.admin_site.admin_view(self.change_view)),
-        )
+        my_urls = [
+            url(r'^$', self.admin_site.admin_view(self.changelist_view)),
+            url(r'^add/$', self.admin_site.admin_view(self.add_view)),
+            url(r'^/(.+)/$', self.admin_site.admin_view(self.change_view)),
+        ]
         return my_urls + urls
 
     def changelist_view(self, request, extra_context=None):
@@ -108,11 +108,11 @@ class ReplyAdmin(admin.ModelAdmin):
 
     def get_urls(self):
         urls = super(ReplyAdmin, self).get_urls()
-        my_urls = patterns('',
-            (r'^$', self.admin_site.admin_view(self.changelist_view)),
-            (r'^add/$', self.admin_site.admin_view(self.add_view)),
-            (r'^/(.+)/$', self.admin_site.admin_view(self.change_view)),
-        )
+        my_urls = [
+            url(r'^$', self.admin_site.admin_view(self.changelist_view)),
+            url(r'^add/$', self.admin_site.admin_view(self.add_view)),
+            url(r'^/(.+)/$', self.admin_site.admin_view(self.change_view)),
+        ]
         return my_urls + urls
 
     def changelist_view(self, request, extra_context=None):
@@ -163,11 +163,11 @@ class ProviderAdmin(admin.ModelAdmin):
 
     def get_urls(self):
         urls = super(ProviderAdmin, self).get_urls()
-        my_urls = patterns('',
-            (r'^$', self.admin_site.admin_view(self.changelist_view)),
-            (r'^add/$', self.admin_site.admin_view(self.add_view)),
-            (r'^/(.+)/$', self.admin_site.admin_view(self.change_view)),
-        )
+        my_urls = [
+            url(r'^$', self.admin_site.admin_view(self.changelist_view)),
+            url(r'^add/$', self.admin_site.admin_view(self.add_view)),
+            url(r'^/(.+)/$', self.admin_site.admin_view(self.change_view)),
+        ]
         return my_urls + urls
 
     def changelist_view(self, request, extra_context=None):
